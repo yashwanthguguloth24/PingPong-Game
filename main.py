@@ -15,8 +15,6 @@ class PongPaddle(Widget):
             ball.velocity_x *= -1.1
 
 
-
-
 class PongBall(Widget):
     # numerical property is an number that can be understood by java like int and similar list property too
     velocity_x = NumericProperty(0)
@@ -33,10 +31,6 @@ class PongBall(Widget):
 # on_touch_down() - when our fingers/mouse touches the screen
 # on_touch_up() - when we lift our finger off the screen after touching it
 # on_touch_move() - when we drag our finger on the screen
-
-
-
-
 
 
 # updates movement by calling move() every time
@@ -80,19 +74,12 @@ class PongGame(Widget):
             self.player2.center_y = touch.y
 
 
-
-
-
-
-
 class PongApp(App):
     def build(self):
         game = PongGame()
         game.serve_ball()
         Clock.schedule_interval(game.update, (1.0/60.0))           #60 fps
         return game
-
-
 
 
 PongApp().run()
